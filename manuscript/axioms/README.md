@@ -15,16 +15,14 @@
 
 ## 로컬에서 원고 시작하기
 
-저장소 루트에서 아래 명령을 실행합니다. 파일이 없다면 저자 안내의 **LaTeX template** 링크에서 ZIP을 받을 수 있습니다.
-MDPI 배포 파일은 투고 준비용으로 로컬에 두고, 팀이 작성하는 원고는 Git으로 관리합니다.
+pdfLaTeX, latexmk, MDPI 클래스가 사용하는 TeX 패키지와 EPS 변환 도구(epstopdf, Ghostscript)가 설치된 환경에서
+저장소를 clone한 뒤 아래 명령을 실행합니다. 필요한 MDPI 클래스, 스타일, 로고는 [Definitions/](Definitions/)에 들어 있습니다.
 
 ```sh
 cd manuscript/axioms
-unzip -n ~/Downloads/MDPI_template_ACS.zip
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
 
-편집할 파일은 `main.tex`, 결과는 `build/main.pdf`입니다. 빌드에는 pdfLaTeX, latexmk와 MDPI 클래스의 의존 패키지가 필요합니다.
-`template.tex`와 `template.pdf`에는 출판사가 제공한 수식·정리·표·참고문헌 예제가 있습니다.
+[main.tex](main.tex)를 편집하면 결과는 `build/main.pdf`에 생성됩니다.
 
 실제 투고 시에는 작성한 소스, 사용한 그림·참고문헌과 `Definitions/`를 한 ZIP에 담고 새 폴더에서 다시 빌드해 확인합니다.
