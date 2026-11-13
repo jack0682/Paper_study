@@ -21,7 +21,7 @@
 | [src/](src/README.md) · [tests/](tests/README.md) | 연구 코드와 동작을 검증하는 테스트 |
 | [experiments/](experiments/TEMPLATE.md) | 실험별 설정, 실행 명령, 코드 커밋 |
 | [results/](results/README.md) | 원고에 인용할 결과표와 그림 |
-| [manuscript/](manuscript/outline.md) | 원고 개요와 주장별 근거 |
+| [manuscript/](manuscript/outline.md) | 원고 개요와 주장별 근거, [Axioms 특집호 투고 원고](manuscript/axioms/README.md) |
 | [scripts/](scripts/) · [.github/](.github/) | 개발 검사, GitHub Actions, PR 양식과 ruleset |
 
 예를 들어 `experiments/EXP-001.md`는 `docs/questions/RQ-001.md`를 연결하고, 실행한 코드 커밋과
