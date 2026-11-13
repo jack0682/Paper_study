@@ -1,3 +1,2 @@
 pymarkdownlnt==0.9.41
 yamllint==1.38.0
-ruff==0.17.5

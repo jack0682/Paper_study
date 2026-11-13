@@ -21,7 +21,13 @@ PR에서는 대상 브랜치에 없는 모든 커밋을 검사하고, 두 보호
 
 ## 로컬 lint
 
-저장소 루트에서 CI와 같은 Markdown, YAML, Python 검사를 실행합니다.
+필수 검사 `Lint`는 연구 코드에 ROS 2 Jazzy의 `ament_lint_common` 도구를 적용합니다.
+Python은 flake8·pep257, C/C++는 cppcheck·cpplint·uncrustify, CMake는 lint_cmake, XML은 xmllint로 검사합니다.
+ament_copyright는 프로젝트 라이선스와 지원하는 소스 파일을 확인합니다.
+각 도구는 Git이 추적하는 대상 파일에 실행되며, 출판사 배포 폴더인 `manuscript/axioms/Definitions/`는 제외합니다.
+
+Markdown과 YAML 검사도 함께 실행합니다. Docker와 Python 3을 사용할 수 있는 환경에서
+저장소 루트의 다음 명령을 실행하면 CI와 같은 전체 검사를 재현할 수 있습니다.
 
 ```sh
 python3 -m venv .venv
