@@ -33,4 +33,5 @@ jobs:
       - run: python3 -m venv "$RUNNER_TEMP/lint"
       - run: |
           "$RUNNER_TEMP/lint/bin/pip" install -r .github/lint-requirements.txt
-      - run: PATH="$RUNNER_TEMP/lint/bin:$PATH" bash scripts/lint.sh
+      - name: Run document and ament linters
+        run: PATH="$RUNNER_TEMP/lint/bin:$PATH" bash scripts/lint.sh
