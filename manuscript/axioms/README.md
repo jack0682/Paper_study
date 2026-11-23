@@ -24,5 +24,17 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
 
 [main.tex](main.tex)를 편집하면 결과는 `build/main.pdf`에 생성됩니다.
+Ubuntu에서는 CI의 `Manuscript` 검사와 같은 패키지로 환경을 맞출 수 있습니다.
+
+```sh
+sudo apt-get install --no-install-recommends latexmk texlive-latex-recommended texlive-latex-extra \
+  texlive-fonts-recommended texlive-fonts-extra texlive-science texlive-humanities \
+  texlive-plain-generic texlive-font-utils ghostscript
+```
+
+## 참고문헌
+
+인용은 [references.bib](references.bib)의 키로 하고, 같은 키를 `docs/literature/`의 논문 노트에 적습니다.
+BibTeX은 인용이 하나도 없으면 실패하므로, 첫 `\cite`를 넣을 때 `main.tex` 끝의 참고문헌 블록 주석을 풉니다.
 
 실제 투고 시에는 작성한 소스, 사용한 그림·참고문헌과 `Definitions/`를 한 ZIP에 담고 새 폴더에서 다시 빌드해 확인합니다.

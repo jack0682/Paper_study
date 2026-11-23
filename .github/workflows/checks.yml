@@ -33,5 +33,23 @@ jobs:
       - run: python3 -m venv "$RUNNER_TEMP/lint"
       - run: |
           "$RUNNER_TEMP/lint/bin/pip" install -r .github/lint-requirements.txt
-      - name: Run document and ament linters
+      - name: Run document linters
         run: PATH="$RUNNER_TEMP/lint/bin:$PATH" bash scripts/lint.sh
+  manuscript:
+    name: Manuscript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
+        with:
+          persist-credentials: false
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends latexmk \
+            texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-fonts-extra \
+            texlive-science texlive-humanities texlive-plain-generic \
+            texlive-font-utils ghostscript
+      - name: Build main.tex
+        working-directory: manuscript/axioms
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
