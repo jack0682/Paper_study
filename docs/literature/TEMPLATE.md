@@ -4,6 +4,7 @@
 - 관련 후보 주제 또는 연구 질문(RQ-번호)
 - 저자 / 학회·연도
 - DOI 또는 원문 링크
+- BibTeX 키: `manuscript/axioms/references.bib`에 등록한 키 (예: `author2024keyword`)
 
 ## 연구 질문
 

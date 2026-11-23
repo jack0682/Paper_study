@@ -26,7 +26,8 @@
         "strict_required_status_checks_policy": false,
         "required_status_checks": [
           {"context": "DCO", "integration_id": 15368},
-          {"context": "Lint", "integration_id": 15368}
+          {"context": "Lint", "integration_id": 15368},
+          {"context": "Manuscript", "integration_id": 15368}
         ]
       }
     }
